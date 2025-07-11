@@ -1,0 +1,63 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1.6;
+  background-color: #f8f9fa;
+  color: #333;
+}
+
+.container {
+  width: 90%;
+  max-width: 1100px;
+  margin: auto;
+}
+
+.hero {
+  background: linear-gradient(to right, #007BFF, #00BFFF);
+  color: white;
+  padding: 100px 0;
+  text-align: center;
+}
+
+.cta-button {
+  background-color: white;
+  color: #007BFF;
+  padding: 12px 24px;
+  margin-top: 20px;
+  border-radius: 5px;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.section {
+  padding: 60px 0;
+  text-align: center;
+}
+
+.services-list {
+  list-style: none;
+  padding: 0;
+  margin-top: 20px;
+}
+
+.services-list li {
+  padding: 10px;
+  font-size: 1.1rem;
+}
+
+.contact-section a {
+  color: #007BFF;
+  text-decoration: none;
+}
+
+footer {
+  background-color: #333;
+  color: white;
+  padding: 20px 0;
+  text-align: center;
+}
