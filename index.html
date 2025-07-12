@@ -1,15 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <!-- Character encoding for proper text rendering -->
-  <meta charset="UTF-8">
-  <!-- Responsive design for mobile compatibility -->
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <!-- Title shown in browser tab -->
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Brightly Done Cleaning</title>
-  <!-- Internal CSS styles -->
   <style>
-    /* Global styles */
     body {
       margin: 0;
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -17,10 +12,9 @@
       color: #333;
     }
 
-    /* Navigation menu styling */
     header {
       background-color: #007bff;
-      padding: 1rem;
+      padding: 1.5rem;
       color: white;
     }
 
@@ -33,7 +27,7 @@
     }
 
     .logo {
-      font-size: 1.5rem;
+      font-size: 2rem; /* Increased font size */
       font-weight: bold;
     }
 
@@ -48,7 +42,6 @@
       text-decoration: underline;
     }
 
-    /* Hero section styling */
     .hero {
       text-align: center;
       padding: 4rem 1rem;
@@ -66,7 +59,23 @@
       margin: auto;
     }
 
-    /* Contact section styling */
+    /* Image gallery section */
+    .gallery {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 1rem;
+      padding: 2rem 1rem;
+    }
+
+    .gallery img {
+      width: 300px;
+      height: 200px;
+      object-fit: cover;
+      border-radius: 10px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    }
+
     .contact {
       padding: 2rem 1rem;
       max-width: 600px;
@@ -77,9 +86,37 @@
       color: #007bff;
     }
 
-    .contact p {
+    form {
+      display: flex;
+      flex-direction: column;
+    }
+
+    label {
+      margin-top: 1rem;
+      font-weight: bold;
+    }
+
+    input, textarea, select {
+      padding: 0.5rem;
       font-size: 1rem;
-      line-height: 1.6;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      margin-top: 0.3rem;
+    }
+
+    button {
+      margin-top: 1.5rem;
+      padding: 0.7rem;
+      background-color: #007bff;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      font-size: 1rem;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #0056b3;
     }
 
     footer {
@@ -91,37 +128,82 @@
     }
   </style>
 </head>
-
 <body>
-  <!-- Navigation menu bar -->
+  <!-- Top navigation -->
   <header>
     <nav>
       <div class="logo">Brightly Done Cleaning</div>
       <div class="menu">
-        <!-- Navigation links -->
         <a href="#home">Home</a>
         <a href="#contact">Contact</a>
       </div>
     </nav>
   </header>
 
-  <!-- Home section with company description -->
+  <!-- Hero Section -->
   <section class="hero" id="home">
     <h1>Shine Bright with Brightly Done Cleaning</h1>
     <p>We provide top-notch residential and commercial cleaning services that leave your space spotless, fresh, and ready for whatever comes next.</p>
   </section>
 
-  <!-- Contact section -->
+  <!-- Gallery of cleaning images -->
+  <section class="gallery">
+    <!-- Replace the src URLs with your own hosted images or local files if needed -->
+    <img src="https://images.unsplash.com/photo-1598515213891-6d5e9669d227?auto=format&fit=crop&w=600&q=80" alt="Cleaner with spray bottle">
+    <img src="https://images.unsplash.com/photo-1581579185169-298d0a75aa47?auto=format&fit=crop&w=600&q=80" alt="Commercial cleaning tools">
+    <img src="https://images.unsplash.com/photo-1617004104037-5114c0511082?auto=format&fit=crop&w=600&q=80" alt="Home being cleaned">
+  </section>
+
+  <!-- Contact section with form -->
   <section class="contact" id="contact">
     <h2>Contact Us</h2>
     <p>
       📍 Based in YourCity, USA<br>
       📞 Call or Text: (123) 456-7890<br>
-      ✉️ Email: contact@brightlydonecleaning.com
+      ✉️ Email: <a href="mailto:shine@brightlydonecleaning.com">shine@brightlydonecleaning.com</a>
     </p>
+
+    <form action="mailto:shine@brightlydonecleaning.com" method="POST" enctype="text/plain">
+      <label for="name">Full Name</label>
+      <input type="text" id="name" name="Name" required>
+
+      <label for="email">Email Address</label>
+      <input type="email" id="email" name="Email" required>
+
+      <label for="phone">Phone Number</label>
+      <input type="tel" id="phone" name="Phone" required>
+
+      <label for="squareFootage">Approximate Square Footage</label>
+      <input type="text" id="squareFootage" name="Square Footage">
+
+      <label for="day">Preferred Cleaning Day</label>
+      <select id="day" name="Preferred Day">
+        <option value="">-- Select a Day --</option>
+        <option>Monday</option>
+        <option>Tuesday</option>
+        <option>Wednesday</option>
+        <option>Thursday</option>
+        <option>Friday</option>
+        <option>Saturday</option>
+        <option>Sunday</option>
+      </select>
+
+      <label for="time">Preferred Cleaning Time</label>
+      <select id="time" name="Preferred Time">
+        <option value="">-- Select a Time --</option>
+        <option>Morning (8 AM - 12 PM)</option>
+        <option>Afternoon (12 PM - 4 PM)</option>
+        <option>Evening (4 PM - 8 PM)</option>
+      </select>
+
+      <label for="notes">Additional Notes</label>
+      <textarea id="notes" name="Notes" rows="4" placeholder="Any special instructions or requests..."></textarea>
+
+      <button type="submit">Request a Quote</button>
+    </form>
   </section>
 
-  <!-- Footer with copyright -->
+  <!-- Footer -->
   <footer>
     &copy; 2025 Brightly Done Cleaning, LLC. All rights reserved.
   </footer>
