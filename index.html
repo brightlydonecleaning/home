@@ -12,6 +12,7 @@
       background: #f0f4f8;
       color: #333;
     }
+
     a.button {
       display: inline-block;
       padding: 0.8rem 1.5rem;
@@ -22,6 +23,7 @@
       font-weight: bold;
       transition: background 0.3s;
     }
+
     a.button:hover { background: #0056b3; }
 
     header {
@@ -43,12 +45,17 @@
       justify-content: center;
       text-align: center;
       color: white;
+      padding: 1rem;
     }
 
-    .hero h1 { font-size: 3rem; text-shadow: 0 2px 5px rgba(0,0,0,0.5); }
+    .hero h1 {
+      font-size: 2.5rem;
+      text-shadow: 0 2px 5px rgba(0,0,0,0.5);
+    }
+
     .hero p {
       margin: 1rem 0 2rem;
-      font-size: 1.2rem;
+      font-size: 1.1rem;
       max-width: 600px;
       line-height: 1.5;
     }
@@ -82,8 +89,8 @@
     }
 
     .service-box img {
-      width: 60px;
-      height: 60px;
+      width: 50px;
+      height: 50px;
       margin-bottom: 1rem;
     }
 
@@ -150,6 +157,39 @@
       background: #007bff;
       color: white;
       margin-top: 2rem;
+    }
+
+    /* Mobile Styles */
+    @media (max-width: 768px) {
+      .hero {
+        height: auto;
+        padding: 4rem 1rem;
+        flex-direction: column;
+      }
+
+      .hero h1 {
+        font-size: 2rem;
+      }
+
+      .hero p {
+        font-size: 1rem;
+      }
+
+      .contact {
+        grid-template-columns: 1fr;
+      }
+
+      .service-box {
+        padding: 1.5rem;
+      }
+
+      .services {
+        gap: 1.5rem;
+      }
+
+      section {
+        margin: 2rem auto;
+      }
     }
   </style>
 </head>
@@ -251,10 +291,8 @@
     }, { threshold: 0.2 });
     sections.forEach(section => observer.observe(section));
 
-    // Force scroll to top on page reload
-    window.onbeforeunload = () => {
-      window.scrollTo(0, 0);
-    };
+    // Scroll to top on refresh
+    window.onbeforeunload = () => window.scrollTo(0, 0);
   </script>
 </body>
 </html>
