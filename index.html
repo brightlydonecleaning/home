@@ -11,122 +11,81 @@
       font-family: Arial, sans-serif;
       background: #ffffff;
       color: #333;
-      padding-top: 80px;
-      padding-bottom: 80px;
+      padding-top: 80px;   /* space for sticky header */
+      padding-bottom: 60px; /* space for sticky footer */
     }
 
-    a.button {
-      display: inline-block;
-      padding: 0.8rem 1.5rem;
-      background: #BF5700;
+    /* Sticky Header */
+    header {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background: #bf5700; /* burnt orange */
       color: white;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 2rem;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      z-index: 1000;
+    }
+    header h1 {
+      font-size: 1.5rem;
+    }
+    header a.call-button {
+      background: white;
+      color: #bf5700;
+      padding: 0.5rem 1rem;
       border-radius: 5px;
       text-decoration: none;
       font-weight: bold;
       transition: background 0.3s;
     }
+    header a.call-button:hover {
+      background: #f4f4f4;
+    }
 
-    a.button:hover { background: #944500; }
-
-    header {
+    /* Sticky Footer */
+    footer {
       position: fixed;
-      top: 0;
-      left: 0;
+      bottom: 0;
       width: 100%;
-      background: #BF5700;
+      background: #bf5700; /* burnt orange */
       color: white;
-      padding: 1rem 2rem;
-      font-size: 1.5rem;
-      font-weight: bold;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      z-index: 1000;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-    }
-
-    .call-button {
-      background: white;
-      color: #BF5700;
-      padding: 0.5rem 1rem;
-      border-radius: 5px;
-      font-weight: bold;
-      text-decoration: none;
-    }
-
-    .hero {
-      background: #fff;
-      height: 60vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
       text-align: center;
       padding: 1rem;
+      font-size: 0.9rem;
     }
 
-    .hero h1 {
-      font-size: 2.5rem;
-      color: #BF5700;
-    }
-
-    .hero p {
-      margin: 1rem 0 2rem;
-      font-size: 1.1rem;
-      max-width: 600px;
-      line-height: 1.5;
-    }
-
-    section {
+    /* Main content container */
+    .container {
       max-width: 1000px;
-      margin: 4rem auto;
-      padding: 0 1rem;
-    }
-
-    .services {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 2rem;
-    }
-
-    .service-box {
-      background: white;
+      margin: auto;
       padding: 2rem;
-      text-align: center;
-      border-radius: 10px;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
     }
 
-    .service-box img {
-      width: 100%;
-      height: auto;
-      margin-bottom: 1rem;
-    }
-
-    .service-box h3 {
-      margin-bottom: 1rem;
-      color: #BF5700;
-    }
-
+    /* Contact section grid */
     .contact {
       display: grid;
       grid-template-columns: 1fr 1fr;
       gap: 2rem;
     }
 
+    /* Form styling */
     form {
-      background: white;
+      background: #f9f9f9;
       padding: 2rem;
       border-radius: 10px;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
     }
-
     form label {
       margin-top: 1rem;
       display: block;
       font-weight: bold;
     }
-
-    form input, form textarea, form select {
+    form input,
+    form textarea,
+    form select {
       width: 100%;
       padding: 0.8rem;
       margin-top: 0.4rem;
@@ -134,144 +93,107 @@
       border-radius: 5px;
       font-size: 0.95rem;
     }
-
     form button {
       margin-top: 1.5rem;
       padding: 0.8rem;
-      background: #BF5700;
+      background: #bf5700;
       color: white;
       border: none;
       border-radius: 5px;
       font-size: 1rem;
       cursor: pointer;
     }
-
     form button:hover {
-      background: #944500;
+      background: #a94b00;
     }
 
+    /* Map iframe styling */
     .map iframe {
       width: 100%;
-      height: 100%;
-      min-height: 340px;
+      height: 340px;
       border: none;
       border-radius: 10px;
       box-shadow: 0 2px 8px rgba(0,0,0,0.1);
     }
 
-    footer {
-      position: fixed;
-      bottom: 0;
-      left: 0;
-      width: 100%;
-      text-align: center;
-      padding: 1rem;
-      background: #BF5700;
-      color: white;
-      z-index: 1000;
-    }
-
+    /* Responsive adjustments */
     @media (max-width: 768px) {
       .contact {
         grid-template-columns: 1fr;
       }
-
       header {
         flex-direction: column;
         align-items: flex-start;
       }
-
-      .call-button {
-        margin-top: 0.5rem;
+      header h1 {
+        margin-bottom: 0.5rem;
       }
     }
   </style>
 </head>
 <body>
+
   <header>
-    Brightly Done Cleaning, LLC
-    <a href="tel:1234567890" class="call-button">Call Now</a>
+    <h1>Brightly Done Cleaning, LLC</h1>
+    <a class="call-button" href="tel:1234567890">Call Now</a>
   </header>
 
-  <div class="hero" id="hero">
-    <div>
-      <h1>Your Clean Space Awaits</h1>
-      <p>Brightly Done Cleaning, LLC offers premium residential and commercial cleaning that makes your place shine. Experience professionalism and reliability today.</p>
-      <a href="#contact" class="button">Request a Quote</a>
-    </div>
+  <div class="container">
+    <section id="contact" class="contact">
+      <div>
+        <h2>Request a Free Quote</h2>
+        <form action="https://formspree.io/f/your-form-id" method="POST">
+          <label for="name">Name*</label>
+          <input type="text" id="name" name="name" required>
+
+          <label for="email">Email*</label>
+          <input type="email" id="email" name="email" required>
+
+          <label for="phone">Phone*</label>
+          <input type="tel" id="phone" name="phone" required>
+
+          <label for="square">Square Footage</label>
+          <input type="text" id="square" name="squareFootage">
+
+          <label for="day">Preferred Day</label>
+          <select id="day" name="day">
+            <option value="">-- Select --</option>
+            <option>Monday</option>
+            <option>Tuesday</option>
+            <option>Wednesday</option>
+            <option>Thursday</option>
+            <option>Friday</option>
+            <option>Saturday</option>
+            <option>Sunday</option>
+          </select>
+
+          <label for="time">Preferred Time</label>
+          <select id="time" name="time">
+            <option value="">-- Select --</option>
+            <option>Morning</option>
+            <option>Afternoon</option>
+            <option>Evening</option>
+          </select>
+
+          <label for="notes">Notes</label>
+          <textarea id="notes" name="notes" rows="4"></textarea>
+          <button type="submit">Send Quote Request</button>
+        </form>
+      </div>
+      <div class="map">
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14033.55877262323!2d-98.0818497!3d27.7522489!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8668a8bce6c245f7%3A0xe35a90f804fd7aa!2sAlice%2C%20TX%2078332!5e0!3m2!1sen!2sus!4v1720739378101!5m2!1sen!2sus"
+          allowfullscreen=""
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade">
+        </iframe>
+      </div>
+    </section>
   </div>
-
-  <section id="services">
-    <h2 style="text-align:center; margin-bottom:2rem; color:#BF5700;">Our Services</h2>
-    <div class="services">
-      <div class="service-box">
-        <img src="https://raw.githubusercontent.com/YOUR-USERNAME/YOUR-REPO/main/assets/images/residential.jpg" alt="Residential Cleaning">
-        <h3>Residential Cleaning</h3>
-        <p>Quick and thorough home cleaning to keep your space bright and clean, every time.</p>
-      </div>
-      <div class="service-box">
-        <img src="https://raw.githubusercontent.com/YOUR-USERNAME/YOUR-REPO/main/assets/images/commercial.jpg" alt="Commercial Cleaning">
-        <h3>Commercial Cleaning</h3>
-        <p>Professional cleaning services for offices, stores, and commercial properties.</p>
-      </div>
-    </div>
-  </section>
-
-  <section id="contact" class="contact">
-    <div>
-      <h2 style="color:#BF5700">Request a Free Quote</h2>
-      <form action="https://formspree.io/f/your-form-id" method="POST">
-        <label for="name">Name*</label>
-        <input type="text" id="name" name="name" required>
-
-        <label for="email">Email*</label>
-        <input type="email" id="email" name="email" required>
-
-        <label for="phone">Phone*</label>
-        <input type="tel" id="phone" name="phone" required>
-
-        <label for="square">Square Footage</label>
-        <input type="text" id="square" name="squareFootage">
-
-        <label for="day">Preferred Day</label>
-        <select id="day" name="day">
-          <option value="">-- Select --</option>
-          <option>Monday</option><option>Tuesday</option><option>Wednesday</option>
-          <option>Thursday</option><option>Friday</option><option>Saturday</option><option>Sunday</option>
-        </select>
-
-        <label for="time">Preferred Time</label>
-        <select id="time" name="time">
-          <option value="">-- Select --</option>
-          <option>Morning</option><option>Afternoon</option><option>Evening</option>
-        </select>
-
-        <label for="notes">Notes</label>
-        <textarea id="notes" name="notes" rows="4"></textarea>
-        <button type="submit">Send Quote Request</button>
-      </form>
-    </div>
-    <div class="map">
-      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d28056.731385504394!2d-98.1005211!3d27.7512675" allowfullscreen loading="lazy"></iframe>
-    </div>
-  </section>
 
   <footer>
     &copy; 2025 Brightly Done Cleaning, LLC. All rights reserved.
   </footer>
 
-  <script>
-    const sections = document.querySelectorAll('section');
-    const observer = new IntersectionObserver(entries => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('visible');
-        }
-      });
-    }, { threshold: 0.2 });
-    sections.forEach(section => observer.observe(section));
-
-    window.onbeforeunload = () => window.scrollTo(0, 0);
-  </script>
 </body>
 </html>
