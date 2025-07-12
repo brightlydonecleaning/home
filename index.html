@@ -3,89 +3,122 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Brightly Done Cleaning, LLC</title>
+  <title>Brightly Done Cleaning</title>
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
     html { scroll-behavior: smooth; }
     body {
       font-family: Arial, sans-serif;
-      background: #ffffff;
+      background: #f0f4f8;
       color: #333;
-      padding-top: 80px;   /* space for sticky header */
-      padding-bottom: 60px; /* space for sticky footer */
     }
 
-    /* Sticky Header */
-    header {
-      position: fixed;
-      top: 0;
-      width: 100%;
-      background: #bf5700; /* burnt orange */
+    a.button {
+      display: inline-block;
+      padding: 0.8rem 1.5rem;
+      background: #007bff;
       color: white;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 1rem 2rem;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-      z-index: 1000;
-    }
-    header h1 {
-      font-size: 1.5rem;
-    }
-    header a.call-button {
-      background: white;
-      color: #bf5700;
-      padding: 0.5rem 1rem;
       border-radius: 5px;
       text-decoration: none;
       font-weight: bold;
       transition: background 0.3s;
     }
-    header a.call-button:hover {
-      background: #f4f4f4;
-    }
 
-    /* Sticky Footer */
-    footer {
-      position: fixed;
-      bottom: 0;
-      width: 100%;
-      background: #bf5700; /* burnt orange */
-      color: white;
+    a.button:hover { background: #0056b3; }
+
+    header {
+      background: white;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      padding: 1.5rem;
       text-align: center;
+      font-size: 1.8rem;
+      font-weight: bold;
+      color: #007bff;
+    }
+
+    .hero {
+      position: relative;
+      background: url('https://raw.githubusercontent.com/brightlydonecleaning/brightlydonecleaning.github.io/main/assets/images/your-hero-image.jpg') no-repeat center/cover;
+      height: 80vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      color: white;
       padding: 1rem;
-      font-size: 0.9rem;
     }
 
-    /* Main content container */
-    .container {
+    .hero h1 {
+      font-size: 2.5rem;
+      text-shadow: 0 2px 5px rgba(0,0,0,0.5);
+    }
+
+    .hero p {
+      margin: 1rem 0 2rem;
+      font-size: 1.1rem;
+      max-width: 600px;
+      line-height: 1.5;
+    }
+
+    section {
       max-width: 1000px;
-      margin: auto;
-      padding: 2rem;
+      margin: 4rem auto;
+      padding: 0 1rem;
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 0.6s ease-out, transform 0.6s ease-out;
     }
 
-    /* Contact section grid */
+    section.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .services {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 2rem;
+    }
+
+    .service-box {
+      background: white;
+      padding: 2rem;
+      text-align: center;
+      border-radius: 10px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+
+    .service-box img {
+      width: 50px;
+      height: 50px;
+      margin-bottom: 1rem;
+    }
+
+    .service-box h3 {
+      margin-bottom: 1rem;
+      color: #007bff;
+    }
+
     .contact {
       display: grid;
       grid-template-columns: 1fr 1fr;
       gap: 2rem;
     }
 
-    /* Form styling */
     form {
-      background: #f9f9f9;
+      background: white;
       padding: 2rem;
       border-radius: 10px;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
     }
+
     form label {
       margin-top: 1rem;
       display: block;
       font-weight: bold;
     }
-    form input,
-    form textarea,
-    form select {
+
+    form input, form textarea, form select {
       width: 100%;
       padding: 0.8rem;
       margin-top: 0.4rem;
@@ -93,108 +126,173 @@
       border-radius: 5px;
       font-size: 0.95rem;
     }
+
     form button {
       margin-top: 1.5rem;
       padding: 0.8rem;
-      background: #bf5700;
+      background: #007bff;
       color: white;
       border: none;
       border-radius: 5px;
       font-size: 1rem;
       cursor: pointer;
     }
+
     form button:hover {
-      background: #a94b00;
+      background: #0056b3;
     }
 
-    /* Map iframe styling */
     .map iframe {
       width: 100%;
-      height: 340px;
+      height: 100%;
+      min-height: 340px;
       border: none;
       border-radius: 10px;
       box-shadow: 0 2px 8px rgba(0,0,0,0.1);
     }
 
-    /* Responsive adjustments */
+    footer {
+      text-align: center;
+      padding: 2rem 1rem;
+      background: #007bff;
+      color: white;
+      margin-top: 2rem;
+    }
+
+    /* Mobile Styles */
     @media (max-width: 768px) {
+      .hero {
+        height: auto;
+        padding: 4rem 1rem;
+        flex-direction: column;
+      }
+
+      .hero h1 {
+        font-size: 2rem;
+      }
+
+      .hero p {
+        font-size: 1rem;
+      }
+
       .contact {
         grid-template-columns: 1fr;
       }
-      header {
-        flex-direction: column;
-        align-items: flex-start;
+
+      .service-box {
+        padding: 1.5rem;
       }
-      header h1 {
-        margin-bottom: 0.5rem;
+
+      .services {
+        gap: 1.5rem;
+      }
+
+      section {
+        margin: 2rem auto;
       }
     }
   </style>
 </head>
 <body>
 
-  <header>
-    <h1>Brightly Done Cleaning, LLC</h1>
-    <a class="call-button" href="tel:1234567890">Call Now</a>
-  </header>
+  <header>Brightly Done Cleaning</header>
 
-  <div class="container">
-    <section id="contact" class="contact">
-      <div>
-        <h2>Request a Free Quote</h2>
-        <form action="https://formspree.io/f/your-form-id" method="POST">
-          <label for="name">Name*</label>
-          <input type="text" id="name" name="name" required>
-
-          <label for="email">Email*</label>
-          <input type="email" id="email" name="email" required>
-
-          <label for="phone">Phone*</label>
-          <input type="tel" id="phone" name="phone" required>
-
-          <label for="square">Square Footage</label>
-          <input type="text" id="square" name="squareFootage">
-
-          <label for="day">Preferred Day</label>
-          <select id="day" name="day">
-            <option value="">-- Select --</option>
-            <option>Monday</option>
-            <option>Tuesday</option>
-            <option>Wednesday</option>
-            <option>Thursday</option>
-            <option>Friday</option>
-            <option>Saturday</option>
-            <option>Sunday</option>
-          </select>
-
-          <label for="time">Preferred Time</label>
-          <select id="time" name="time">
-            <option value="">-- Select --</option>
-            <option>Morning</option>
-            <option>Afternoon</option>
-            <option>Evening</option>
-          </select>
-
-          <label for="notes">Notes</label>
-          <textarea id="notes" name="notes" rows="4"></textarea>
-          <button type="submit">Send Quote Request</button>
-        </form>
-      </div>
-      <div class="map">
-        <!-- Corrected Maps Embed -->
-        <iframe
-          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d51934.27781407364!2d-98.11510828683938!3d27.759285368278317!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8668a8bce6c245f7%3A0xd69c63e904f10c5f!2sAlice%2C%20TX%2078332!5e0!3m2!1sen!2sus!4v1616587353630!5m2!1sen!2sus"
-          allowfullscreen=""
-          loading="lazy"
-          referrerpolicy="no-referrer-when-downgrade">
-        </iframe>
-      </div>
-    </section>
+  <div class="hero" id="hero">
+    <div>
+      <h1>Your Clean Space Awaits</h1>
+      <p>Brightly Done Cleaning offers premium residential and commercial cleaning that makes your place shine. Experience professionalism and reliability today.</p>
+      <a href="#contact" class="button">Request a Quote</a>
+    </div>
   </div>
 
+  <section id="services">
+    <h2 style="text-align:center; margin-bottom:2rem;">Our Services</h2>
+    <div class="services">
+      <div class="service-box">
+        <img src="https://cdn-icons-png.flaticon.com/512/1046/1046784.png" alt="Residential">
+        <h3>Residential Cleaning</h3>
+        <p>Quick and thorough home cleaning to keep your space bright and clean, every time.</p>
+      </div>
+      <div class="service-box">
+        <img src="https://cdn-icons-png.flaticon.com/512/3103/3103469.png" alt="Commercial">
+        <h3>Commercial Cleaning</h3>
+        <p>Professional cleaning services for offices, stores, and commercial properties.</p>
+      </div>
+      <div class="service-box">
+        <img src="https://cdn-icons-png.flaticon.com/512/1680/1680806.png" alt="Deep Clean">
+        <h3>Deep Cleaning</h3>
+        <p>Extensive deep-cleaning service for kitchens, bathrooms, and more.</p>
+      </div>
+      <div class="service-box">
+        <img src="https://cdn-icons-png.flaticon.com/512/1828/1828743.png" alt="Eco">
+        <h3>Eco-Friendly</h3>
+        <p>We use eco-friendly products to help maintain a healthy environment in your space.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" class="contact">
+    <div>
+      <h2>Request a Free Quote</h2>
+      <form action="https://formspree.io/f/your-form-id" method="POST">
+        <label for="name">Name*</label>
+        <input type="text" id="name" name="name" required>
+
+        <label for="email">Email*</label>
+        <input type="email" id="email" name="email" required>
+
+        <label for="phone">Phone*</label>
+        <input type="tel" id="phone" name="phone" required>
+
+        <label for="square">Square Footage</label>
+        <input type="text" id="square" name="squareFootage">
+
+        <label for="day">Preferred Day</label>
+        <select id="day" name="day">
+          <option value="">-- Select --</option>
+          <option>Monday</option><option>Tuesday</option><option>Wednesday</option>
+          <option>Thursday</option><option>Friday</option><option>Saturday</option><option>Sunday</option>
+        </select>
+
+        <label for="time">Preferred Time</label>
+        <select id="time" name="time">
+          <option value="">-- Select --</option>
+          <option>Morning</option><option>Afternoon</option><option>Evening</option>
+        </select>
+
+        <label for="notes">Notes</label>
+        <textarea id="notes" name="notes" rows="4"></textarea>
+        <button type="submit">Send Quote Request</button>
+      </form>
+    </div>
+    <div class="map">
+      <iframe
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d28056.731385504394!2d-98.1005211!3d27.7512675!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8668a8bce6c245f7%3A0xe35a90f804fd7aa!2sAlice%2C%20TX%2078332!5e0!3m2!1sen!2sus!4v1720687322334!5m2!1sen!2sus"
+        allowfullscreen=""
+        loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade">
+      </iframe>
+    </div>
+  </section>
+
   <footer>
-    &copy; 2025 Brightly Done Cleaning, LLC. All rights reserved.
+    &copy; 2025 Brightly Done Cleaning. All rights reserved.
   </footer>
 
+  <script>
+    // Scroll animation
+    const sections = document.querySelectorAll('section');
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, { threshold: 0.2 });
+    sections.forEach(section => observer.observe(section));
+
+    // Scroll to top on refresh
+    window.onbeforeunload = () => window.scrollTo(0, 0);
+  </script>
 </body>
 </html>
