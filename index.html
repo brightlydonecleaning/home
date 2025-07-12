@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Brightly Done Cleaning</title>
+  <title>Brightly Done Cleaning, LLC</title>
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
     html { scroll-behavior: smooth; }
@@ -11,12 +11,14 @@
       font-family: Arial, sans-serif;
       background: #ffffff;
       color: #333;
+      padding-top: 80px;
+      padding-bottom: 80px;
     }
 
     a.button {
       display: inline-block;
       padding: 0.8rem 1.5rem;
-      background: #BF5700; /* Burnt Orange */
+      background: #BF5700;
       color: white;
       border-radius: 5px;
       text-decoration: none;
@@ -27,13 +29,29 @@
     a.button:hover { background: #944500; }
 
     header {
-      background: white;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-      padding: 1.5rem;
-      text-align: center;
-      font-size: 1.8rem;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      background: #BF5700;
+      color: white;
+      padding: 1rem 2rem;
+      font-size: 1.5rem;
       font-weight: bold;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      z-index: 1000;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+
+    .call-button {
+      background: white;
       color: #BF5700;
+      padding: 0.5rem 1rem;
+      border-radius: 5px;
+      font-weight: bold;
+      text-decoration: none;
     }
 
     .hero {
@@ -142,27 +160,43 @@
     }
 
     footer {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      width: 100%;
       text-align: center;
-      padding: 2rem 1rem;
+      padding: 1rem;
       background: #BF5700;
       color: white;
-      margin-top: 2rem;
+      z-index: 1000;
     }
 
     @media (max-width: 768px) {
       .contact {
         grid-template-columns: 1fr;
       }
+
+      header {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .call-button {
+        margin-top: 0.5rem;
+      }
     }
   </style>
 </head>
 <body>
-  <header>Brightly Done Cleaning</header>
+  <header>
+    Brightly Done Cleaning, LLC
+    <a href="tel:1234567890" class="call-button">Call Now</a>
+  </header>
 
   <div class="hero" id="hero">
     <div>
       <h1>Your Clean Space Awaits</h1>
-      <p>Brightly Done Cleaning offers premium residential and commercial cleaning that makes your place shine. Experience professionalism and reliability today.</p>
+      <p>Brightly Done Cleaning, LLC offers premium residential and commercial cleaning that makes your place shine. Experience professionalism and reliability today.</p>
       <a href="#contact" class="button">Request a Quote</a>
     </div>
   </div>
@@ -223,11 +257,10 @@
   </section>
 
   <footer>
-    &copy; 2025 Brightly Done Cleaning. All rights reserved.
+    &copy; 2025 Brightly Done Cleaning, LLC. All rights reserved.
   </footer>
 
   <script>
-    // Scroll animation
     const sections = document.querySelectorAll('section');
     const observer = new IntersectionObserver(entries => {
       entries.forEach(entry => {
@@ -238,7 +271,6 @@
     }, { threshold: 0.2 });
     sections.forEach(section => observer.observe(section));
 
-    // Scroll to top on refresh
     window.onbeforeunload = () => window.scrollTo(0, 0);
   </script>
 </body>
