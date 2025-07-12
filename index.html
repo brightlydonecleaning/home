@@ -5,65 +5,36 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Brightly Done Cleaning</title>
   <style>
-    :root {
-      --bg: #f8f9fa;
-      --text: #333;
-      --primary: #007bff;
-      --light-section: #e9f5ff;
-    }
-
-    body.dark-mode {
-      --bg: #1e1e1e;
-      --text: #f1f1f1;
-      --primary: #66b2ff;
-      --light-section: #2a2a2a;
-    }
-
     body {
       margin: 0;
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background-color: var(--bg);
-      color: var(--text);
-      scroll-behavior: smooth;
-      transition: background-color 0.3s, color 0.3s;
+      background: url('https://images.unsplash.com/photo-1581578017426-1c3d0c5ff735?auto=format&fit=crop&w=1600&q=80') no-repeat center center fixed;
+      background-size: cover;
+      color: #333;
+    }
+
+    /* Transparent containers */
+    .container {
+      background-color: rgba(255, 255, 255, 0.85);
+      padding: 2rem;
+      border-radius: 10px;
+      margin: 2rem auto;
+      max-width: 1000px;
+      box-shadow: 0 0 20px rgba(0,0,0,0.1);
     }
 
     header {
-      background-color: var(--primary);
+      background-color: rgba(0, 123, 255, 0.9);
       padding: 1.5rem;
       color: white;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      position: sticky;
-      top: 0;
-      z-index: 10;
-    }
-
-    .logo {
+      text-align: center;
       font-size: 2rem;
       font-weight: bold;
     }
 
-    .dark-toggle {
-      background: white;
-      color: var(--primary);
-      border: none;
-      padding: 0.4rem 0.8rem;
-      border-radius: 5px;
-      font-size: 0.9rem;
-      cursor: pointer;
-      transition: background 0.3s;
-    }
-
-    .dark-toggle:hover {
-      background: #e0e0e0;
-    }
-
     .hero {
       text-align: center;
-      padding: 4rem 1rem;
-      background-color: var(--light-section);
+      margin-top: 2rem;
     }
 
     .hero h1 {
@@ -82,6 +53,7 @@
       height: 350px;
       overflow: hidden;
       margin-top: 2rem;
+      border-radius: 10px;
     }
 
     .banner img {
@@ -99,13 +71,11 @@
       opacity: 1;
     }
 
-    /* Service Icon Grid */
     .services {
       display: flex;
       justify-content: space-around;
       flex-wrap: wrap;
-      padding: 2rem 1rem;
-      background-color: var(--light-section);
+      margin-top: 2rem;
     }
 
     .service-box {
@@ -128,24 +98,17 @@
       display: flex;
       flex-wrap: wrap;
       justify-content: space-between;
-      max-width: 1000px;
-      margin: 3rem auto;
       gap: 2rem;
-      padding: 1rem;
+      margin-top: 2rem;
     }
 
-    .form-section {
-      flex: 1;
-      min-width: 300px;
-    }
-
-    .map-section {
+    .form-section, .map-section {
       flex: 1;
       min-width: 300px;
     }
 
     .contact h2 {
-      color: var(--primary);
+      color: #007bff;
       margin-bottom: 1rem;
     }
 
@@ -170,7 +133,7 @@
     button {
       margin-top: 1.5rem;
       padding: 0.7rem;
-      background-color: var(--primary);
+      background-color: #007bff;
       color: white;
       border: none;
       border-radius: 5px;
@@ -193,34 +156,31 @@
     footer {
       text-align: center;
       padding: 1rem;
-      background-color: var(--primary);
+      background-color: rgba(0, 123, 255, 0.9);
       color: white;
       margin-top: 2rem;
     }
   </style>
 </head>
 <body>
-  <!-- Header with Logo and Dark Mode Toggle -->
-  <header>
-    <div class="logo">Brightly Done Cleaning</div>
-    <button class="dark-toggle" onclick="toggleDarkMode()">🌙 Toggle Dark Mode</button>
-  </header>
+  <!-- Header -->
+  <header>Brightly Done Cleaning</header>
 
-  <!-- Hero -->
-  <section class="hero" id="home">
+  <!-- Hero Section -->
+  <div class="container hero">
     <h1>Shine Bright with Brightly Done Cleaning</h1>
     <p>We provide top-notch residential and commercial cleaning services that leave your space spotless, fresh, and ready for whatever comes next.</p>
-  </section>
+  </div>
 
-  <!-- Banner -->
-  <div class="banner">
+  <!-- Rotating Banner -->
+  <div class="container banner">
     <img src="https://images.unsplash.com/photo-1598515213891-6d5e9669d227?auto=format&fit=crop&w=1600&q=80" class="active" alt="Cleaning 1">
     <img src="https://images.unsplash.com/photo-1581579185169-298d0a75aa47?auto=format&fit=crop&w=1600&q=80" alt="Cleaning 2">
     <img src="https://images.unsplash.com/photo-1617004104037-5114c0511082?auto=format&fit=crop&w=1600&q=80" alt="Cleaning 3">
   </div>
 
-  <!-- Service Icon Grid -->
-  <section class="services">
+  <!-- Services Grid -->
+  <div class="container services">
     <div class="service-box">
       <img src="https://cdn-icons-png.flaticon.com/512/1046/1046784.png" alt="Residential">
       <p>Residential</p>
@@ -237,10 +197,10 @@
       <img src="https://cdn-icons-png.flaticon.com/512/1828/1828743.png" alt="Eco-Friendly">
       <p>Eco-Friendly</p>
     </div>
-  </section>
+  </div>
 
-  <!-- Contact / Quote Form and Map -->
-  <section class="contact" id="contact">
+  <!-- Contact and Quote -->
+  <div class="container contact" id="contact">
     <div class="form-section">
       <h2>Request a Free Quote</h2>
       <form action="https://formspree.io/f/your-form-id" method="POST">
@@ -292,16 +252,15 @@
         referrerpolicy="no-referrer-when-downgrade">
       </iframe>
     </div>
-  </section>
+  </div>
 
   <!-- Footer -->
   <footer>
     &copy; 2025 Brightly Done Cleaning, LLC. All rights reserved.
   </footer>
 
-  <!-- JavaScript -->
+  <!-- JS for Rotating Banner -->
   <script>
-    // Rotating banner
     let slides = document.querySelectorAll(".banner img");
     let current = 0;
     setInterval(() => {
@@ -309,11 +268,6 @@
       current = (current + 1) % slides.length;
       slides[current].classList.add("active");
     }, 4000);
-
-    // Dark mode toggle
-    function toggleDarkMode() {
-      document.body.classList.toggle('dark-mode');
-    }
   </script>
 </body>
 </html>
