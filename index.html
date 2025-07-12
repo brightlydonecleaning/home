@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Brightly Done Cleaning | Trusted Home & Office Cleaning </title>
+  <title>Brightly Done Cleaning</title>
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
     html { scroll-behavior: smooth; }
@@ -36,7 +36,7 @@
 
     .hero {
       position: relative;
-      background: url('https://github.com/brightlydonecleaning/home/blob/2370cab1e416b9ce4eb65f6537c6952f871cb3a4/assets/images/towfiqu-barbhuiya--9gPKrsbGmc-unsplash.jpg') no-repeat center/cover;
+      background: url('https://raw.githubusercontent.com/brightlydonecleaning/brightlydonecleaning.github.io/main/assets/images/your-hero-image.jpg') no-repeat center/cover;
       height: 80vh;
       display: flex;
       align-items: center;
@@ -149,13 +149,13 @@
       padding: 2rem 1rem;
       background: #007bff;
       color: white;
-      margin-top: 4rem;
+      margin-top: 2rem;
     }
   </style>
 </head>
 <body>
 
-  <header>BRIGHTLY DONE CLEANING, LLC</header>
+  <header>Brightly Done Cleaning</header>
 
   <div class="hero" id="hero">
     <div>
@@ -240,6 +240,7 @@
   </footer>
 
   <script>
+    // Scroll animation
     const sections = document.querySelectorAll('section');
     const observer = new IntersectionObserver(entries => {
       entries.forEach(entry => {
@@ -249,6 +250,11 @@
       });
     }, { threshold: 0.2 });
     sections.forEach(section => observer.observe(section));
+
+    // Force scroll to top on page reload
+    window.onbeforeunload = () => {
+      window.scrollTo(0, 0);
+    };
   </script>
 </body>
 </html>
