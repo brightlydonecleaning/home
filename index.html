@@ -3,14 +3,13 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>BRIGHTLY DONE CLEANING, LLC</title>
+  <title>Brightly Done Cleaning</title>
   <style>
     body {
       margin: 0;
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background: url('https://unsplash.com/photos/silhouette-of-man-standing-near-glass-window-during-daytime-3hO8igCybds') no-repeat center center fixed;
-      background-size: cover;
-      color: #333;
+      background-color: rgba(0, 0, 64, 0.9); /* Navy with transparency */
+      color: #fff;
     }
 
     .container {
@@ -19,7 +18,8 @@
       border-radius: 10px;
       margin: 2rem auto;
       max-width: 1000px;
-      box-shadow: 0 0 20px rgba(0,0,0,0.1);
+      box-shadow: 0 0 20px rgba(0,0,0,0.2);
+      color: #333;
     }
 
     header {
@@ -152,12 +152,15 @@
       border-radius: 10px;
     }
 
+    .map-section {
+      padding-bottom: 4rem; /* Extra padding under the map */
+    }
+
     footer {
       text-align: center;
       padding: 1rem;
       background-color: rgba(0, 123, 255, 0.9);
       color: white;
-      margin-top: 2rem;
     }
   </style>
 </head>
@@ -258,7 +261,7 @@
     &copy; 2025 Brightly Done Cleaning, LLC. All rights reserved.
   </footer>
 
-  <!-- JS for Rotating Banner -->
+  <!-- JavaScript for Rotating Banner -->
   <script>
     let slides = document.querySelectorAll(".banner img");
     let current = 0;
