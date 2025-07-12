@@ -1,11 +1,12 @@
 
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Brightly Done Cleaning, LLC | Home and Office Cleaning Services</title>
-  <style>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Brightly Done Cleaning, LLC | Home and Office Cleaning Services</title>
+<style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
     html { scroll-behavior: smooth; }
     body {
@@ -224,92 +225,90 @@
         margin-bottom: 0.5rem;
       }
     }
-  </style>
+  
+.menu-link {
+  text-decoration: none;
+  font-weight: bold;
+  color: #007bff;
+  padding: 0.5rem 1rem;
+  border: 2px solid transparent;
+  border-radius: 5px;
+  transition: background 0.3s, color 0.3s;
+}
+.menu-link:hover {
+  background-color: rgba(0, 123, 255, 0.1);
+  color: #0056b3;
+}
+</style>
 </head>
 <body>
-
 <header>
-  <div style="display: flex; align-items: center;"><img src="assets/images/BlueSponge.png" alt="Logo" style="height: 50px; margin-right: 10px;"><h1>Brightly Done Cleaning, LLC</h1></div>
-  <a href="tel:1234567890" class="button">Call Now</a>
-</header>
+<div style="display: flex; align-items: center;"><img alt="Logo" src="assets/images/BlueSponge.png" style="height: 50px; margin-right: 10px;"/><h1>Brightly Done Cleaning, LLC</h1></div>
 
+<nav style="margin-left: auto;"><ul style="display: flex; gap: 1rem; list-style: none; margin: 0; padding: 0;"><li><a class="menu-link" href="#hero">Home</a></li><li><a class="menu-link" href="#services">About</a></li><li><a class="menu-link" href="#contact">Contact</a></li><li><a class="menu-link" href="tel:1234567890">Call Now</a></li></ul></nav></header>
 <section class="hero">
-  <div class="hero-text">
-    <h1>Where Clean Spaces Shine Brighter</h1>
-    <p>We provide professional cleaning services for both residential and commercial spaces. Whether it's your home, office, or business, we tailor each cleaning to your specific needs. Enjoy fast, easy scheduling and a spotless finish—every time.</p>
-    <a href="#contact" class="button">Request a Quote</a>
-  </div>
-  <div class="hero-images">
-    <img src="assets/images/Untitled 3.PNG" class="active" alt="Hero 1">
-    <img src="assets/images/Untitled 2.PNG" alt="Hero 2">
-    <img src="assets/images/Untitled 0.PNG" alt="Hero 3">
-  </div>
+<div class="hero-text">
+<h1>Where Clean Spaces Shine Brighter</h1>
+<p>We provide professional cleaning services for both residential and commercial spaces. Whether it's your home, office, or business, we tailor each cleaning to your specific needs. Enjoy fast, easy scheduling and a spotless finish—every time.</p>
+<a class="button" href="#contact">Request a Quote</a>
+</div>
+<div class="hero-images">
+<img alt="Hero 1" class="active" src="assets/images/Untitled 3.PNG"/>
+<img alt="Hero 2" src="assets/images/Untitled 2.PNG"/>
+<img alt="Hero 3" src="assets/images/Untitled 0.PNG"/>
+</div>
 </section>
-
 <section id="services">
-  <h2 style="text-align:center; margin-bottom:2rem;">Our Services</h2>
-  <div class="services">
-    <div class="service-box">
-      <img src="assets/images/gogonano-QU_1fswV0Ks-unsplash.jpg" alt="Residential Cleaning">
-      <h3>Residential Cleaning</h3>
-      <p>Quick and thorough home cleaning to keep your space bright and clean, every time.</p>
-    </div>
-    <div class="service-box">
-      <img src="assets/images/gil-ribeiro-3hO8igCybds-unsplash.jpg" alt="Commercial Cleaning">
-      <h3>Commercial Cleaning</h3>
-      <p>Professional cleaning services for offices, stores, and commercial properties.</p>
-    </div>
-  </div>
+<h2 style="text-align:center; margin-bottom:2rem;">Our Services</h2>
+<div class="services">
+<div class="service-box">
+<img alt="Residential Cleaning" src="assets/images/gogonano-QU_1fswV0Ks-unsplash.jpg"/>
+<h3>Residential Cleaning</h3>
+<p>Quick and thorough home cleaning to keep your space bright and clean, every time.</p>
+</div>
+<div class="service-box">
+<img alt="Commercial Cleaning" src="assets/images/gil-ribeiro-3hO8igCybds-unsplash.jpg"/>
+<h3>Commercial Cleaning</h3>
+<p>Professional cleaning services for offices, stores, and commercial properties.</p>
+</div>
+</div>
 </section>
-
-<section id="contact" class="contact">
-  <div>
-    <h2>Request a Free Quote</h2>
-    <form action="https://formspree.io/f/xkgbdeyz" method="POST">
-      <label for="name">Name*</label>
-      <input type="text" id="name" name="name" required>
-
-      <label for="email">Email*</label>
-      <input type="email" id="email" name="email" required>
-
-      <label for="phone">Phone*</label>
-      <input type="tel" id="phone" name="phone" required>
-
-      <label for="square">Square Footage</label>
-      <input type="text" id="square" name="squareFootage">
-
-      <label for="day">Preferred Day</label>
-      <select id="day" name="day">
-        <option value="">-- Select --</option>
-        <option>Monday</option><option>Tuesday</option><option>Wednesday</option>
-        <option>Thursday</option><option>Friday</option><option>Saturday</option><option>Sunday</option>
-      </select>
-
-      <label for="time">Preferred Time</label>
-      <select id="time" name="time">
-        <option value="">-- Select --</option>
-        <option>Morning</option><option>Afternoon</option><option>Evening</option>
-      </select>
-
-      <label for="notes">Notes</label>
-      <textarea id="notes" name="notes" rows="4"></textarea>
-      <button type="submit">Send Quote Request</button>
-    </form>
-  </div>
-  <div class="map">
-    <iframe
-      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d28056.731385504394!2d-98.1005211!3d27.7512675!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8668a8bce6c245f7%3A0xe35a90f804fd7aa!2sAlice%2C%20TX%2078332!5e0!3m2!1sen!2sus!4v1720687322334!5m2!1sen!2sus"
-      allowfullscreen=""
-      loading="lazy"
-      referrerpolicy="no-referrer-when-downgrade">
-    </iframe>
-  </div>
+<section class="contact" id="contact">
+<div>
+<h2>Request a Free Quote</h2>
+<form action="https://formspree.io/f/xkgbdeyz" method="POST">
+<label for="name">Name*</label>
+<input id="name" name="name" required="" type="text"/>
+<label for="email">Email*</label>
+<input id="email" name="email" required="" type="email"/>
+<label for="phone">Phone*</label>
+<input id="phone" name="phone" required="" type="tel"/>
+<label for="square">Square Footage</label>
+<input id="square" name="squareFootage" type="text"/>
+<label for="day">Preferred Day</label>
+<select id="day" name="day">
+<option value="">-- Select --</option>
+<option>Monday</option><option>Tuesday</option><option>Wednesday</option>
+<option>Thursday</option><option>Friday</option><option>Saturday</option><option>Sunday</option>
+</select>
+<label for="time">Preferred Time</label>
+<select id="time" name="time">
+<option value="">-- Select --</option>
+<option>Morning</option><option>Afternoon</option><option>Evening</option>
+</select>
+<label for="notes">Notes</label>
+<textarea id="notes" name="notes" rows="4"></textarea>
+<button type="submit">Send Quote Request</button>
+</form>
+</div>
+<div class="map">
+<iframe allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d28056.731385504394!2d-98.1005211!3d27.7512675!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8668a8bce6c245f7%3A0xe35a90f804fd7aa!2sAlice%2C%20TX%2078332!5e0!3m2!1sen!2sus!4v1720687322334!5m2!1sen!2sus">
+</iframe>
+</div>
 </section>
-
 <footer>
-  &copy; 2025 Brightly Done Cleaning, LLC. All rights reserved.
+  © 2025 Brightly Done Cleaning, LLC. All rights reserved.
 </footer>
-
 <script>
   const images = document.querySelectorAll('.hero-images img');
   let current = 0;
@@ -324,6 +323,5 @@
 
   window.onbeforeunload = () => window.scrollTo(0, 0);
 </script>
-
 </body>
 </html>
