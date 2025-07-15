@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
 <meta charset="utf-8"/>
@@ -63,7 +64,18 @@
       text-align: center;
       padding: 1rem;
     }
-  </style>
+  
+@media (max-width: 768px) {
+  header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  header h1 {
+    margin-bottom: 0.5rem;
+  }
+}
+</style>
 </head>
 <body>
 <header>
