@@ -1,43 +1,34 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Careers | Brightly Done Cleaning, LLC</title>
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-    html, body {
-      width: 100%;
-      scroll-behavior: smooth;
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Careers | Brightly Done Cleaning, LLC</title>
+<style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
       font-family: Arial, sans-serif;
       background: #ffffff;
       color: #333;
-      line-height: 1.7;
-      font-size: 1rem;
       padding-top: 80px;
       padding-bottom: 80px;
+      line-height: 1.7;
+      font-size: 1rem;
     }
-
     h1, h2 {
       color: #007bff;
       margin-bottom: 1rem;
     }
-
     section {
       max-width: 1000px;
       margin: 4rem auto;
       padding: 0 1rem;
     }
-
     p {
       margin-bottom: 1.25rem;
     }
-
     .menu-link {
       text-decoration: none;
       font-weight: bold;
@@ -47,129 +38,88 @@
       border-radius: 5px;
       transition: background 0.3s, color 0.3s;
     }
-
     .menu-link:hover {
       background-color: rgba(0, 123, 255, 0.1);
       color: #0056b3;
     }
-
     header {
       background: white;
       color: black;
       position: fixed;
       top: 0;
-      left: 0;
-      right: 0;
-      z-index: 999;
       width: 100%;
+      z-index: 999;
       display: flex;
       justify-content: space-between;
       align-items: center;
       padding: 1rem 2rem;
       box-shadow: 0 2px 5px rgba(0,0,0,0.2);
-      flex-wrap: wrap;
     }
-
     header h1 {
       font-size: 1.5rem;
       font-weight: bold;
       color: black;
       margin: 0;
     }
-
-    nav ul {
-      display: flex;
-      gap: 1rem;
-      list-style: none;
-      margin: 0;
-      padding: 0;
-    }
-
     footer {
       position: fixed;
       bottom: 0;
-      left: 0;
-      right: 0;
       width: 100%;
       background: #007bff;
       color: white;
       text-align: center;
       padding: 1rem;
-      box-shadow: 0 -2px 5px rgba(0,0,0,0.2);
     }
+  
+@media (max-width: 768px) {
+  header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
 
-    footer a {
-      color: white;
-      margin: 0 10px;
-      text-decoration: underline;
-    }
-
-    /* Responsive Adjustments */
-    @media (max-width: 768px) {
-      header {
-        flex-direction: column;
-        align-items: flex-start;
-      }
-      nav ul {
-        flex-direction: column;
-        align-items: flex-start;
-        width: 100%;
-        margin-top: 0.5rem;
-      }
-      nav ul li {
-        width: 100%;
-      }
-      nav ul li a {
-        display: block;
-        width: 100%;
-      }
-    }
-  </style>
+  header h1 {
+    margin-bottom: 0.5rem;
+  }
+}
+</style>
 </head>
 <body>
-
 <header>
-  <div style="display: flex; align-items: center;">
-    <img alt="Logo" src="assets/images/BlueSponge.png" style="height: 50px; margin-right: 10px;" />
-    <h1>Brightly Done Cleaning, LLC</h1>
-  </div>
-  <nav>
-    <ul>
-      <li><a class="menu-link" href="index.html">Home</a></li>
-      <li><a class="menu-link" href="about.html">About</a></li>
-      <!--<li><a class="menu-link" href="contact.html">Contact</a></li>-->
-      <li><a class="menu-link" href="tel:3613894864">Call Now</a></li>
-    </ul>
-  </nav>
+<div style="display: flex; align-items: center;">
+<img alt="Logo" src="assets/images/BlueSponge.png" style="height: 50px; margin-right: 10px;"/>
+<h1>Brightly Done Cleaning, LLC</h1>
+</div>
+<nav style="margin-left: auto;">
+<ul style="display: flex; gap: 1rem; list-style: none; margin: 0; padding: 0;">
+<li><a class="menu-link" href="index.html">Home</a></li>
+<li><a class="menu-link" href="about.html">About</a></li>
+<!--<li><a class="menu-link" href="contact.html">Contact</a></li>-->
+<li><a class="menu-link" href="tel:3613894864">Call Now</a></li>
+</ul>
+</nav>
 </header>
-
 <section>
-  <h1>Join Our Team</h1>
-  <p>At Brightly Done Cleaning, LLC, we're always looking for motivated and reliable individuals to join our growing team. We value integrity, attention to detail, and a positive attitude. Whether you’re experienced in the cleaning industry or just starting out, we’d love to hear from you.</p>
-
-  <h2>Why Work With Us?</h2>
-  <p>We offer flexible scheduling, a supportive team environment, and the opportunity to grow with a company that takes pride in clean spaces and customer satisfaction.</p>
-
-  <h2>Current Opportunities</h2>
-  <p><strong>Thank you for your interest in joining our team!</strong><br />
-  No job openings at this time.<br />
-  Currently, we do not have any open positions, but we encourage you to check back periodically for future opportunities.</p>
-
-  <h2>How to Apply</h2>
-  <p>If you're interested in working with us, please email your name, contact info, availability, and any relevant experience to: <a href="mailto:careers@brightlydonecleaning.com">info@brightlydonecleaning.com</a></p>
-
-  <p>We look forward to learning more about you!</p>
+<h1>Join Our Team</h1>
+<p>At Brightly Done Cleaning, LLC, we're always looking for motivated and reliable individuals to join our growing team. We value integrity, attention to detail, and a positive attitude. Whether you’re experienced in the cleaning industry or just starting out, we’d love to hear from you.</p>
+<h2>Why Work With Us?</h2>
+<p>We offer flexible scheduling, a supportive team environment, and the opportunity to grow with a company that takes pride in clean spaces and customer satisfaction.</p>
+<h2>Current Opportunities</h2>
+<p><strong>Residential &amp; Commercial Cleaner</strong><br/>
+  Part-time or full-time | Starting at $15/hour<br/>
+  Duties include sweeping, mopping, dusting, sanitizing surfaces, and ensuring client satisfaction. Must have transportation and a professional attitude.</p>
+<h2>How to Apply</h2>
+<p>If you're interested in working with us, please email your name, contact info, availability, and any relevant experience to: <a href="mailto:info@brightlydonecleaning.com">info@brightlydonecleaning.com</a></p>
+<p>We look forward to learning more about you!</p>
 </section>
-
 <footer>
   © 2025 Brightly Done Cleaning, LLC. All rights reserved.
   <div style="margin-top: 10px;">
-    <a href="careers.html">Careers</a> |
-    <a href="privacy-policy.html">Privacy Policy</a> |
-    <a href="terms-and-conditions.html">Terms and Conditions</a>
-  </div>
+<a href="careers.html" style="color: white; margin: 0 10px; text-decoration: underline;">Careers</a>
+    |
+    <a href="privacy-policy.html" style="color: white; margin: 0 10px; text-decoration: underline;">Privacy Policy</a>
+    |
+    <a href="terms-and-conditions.html" style="color: white; margin: 0 10px; text-decoration: underline;">Terms and Conditions</a>
+</div>
 </footer>
-
 </body>
 </html>
-
